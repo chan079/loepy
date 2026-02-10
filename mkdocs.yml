@@ -1,0 +1,45 @@
+site_name: Python code for Lectures on Econometrics
+
+nav:
+  - Home: index.md
+  - Tutorials:
+      - 준비: 00-intro.md
+      - 제3장: 03.md
+      #- 변수 선택: tut03.md
+
+theme:
+  name: material
+  language: ko
+  features:
+    - toc.integrate
+    - navigation.indexes
+    - navigation.sections
+    - navigation.instant
+    - navigation.tabs
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - toc:
+      permalink: false
+      toc_depth: 3
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: false
+      auto_title: true
+  - pymdownx.superfences
+  - pymdownx.details
+
+extra_javascript:
+  - javascripts/strip-prompts.js
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+#plugins:
+#  - search
+#  - enumerate-headings:
+#      toc_depth: 2
