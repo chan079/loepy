@@ -7,12 +7,12 @@ div.reg-notes {
 }
 
 table.simpletable td,
-table.simpletable th {
+table.simpletable th,
+table.dataframe tr {
   line-height: 1.0;
 }
 
-table.simpletable,
-table.dataframe {
+table.simpletable {
   width: auto;                 /* Jupyter처럼 내용 너비 중심 */
   max-width: 100%;
   border-collapse: separate;
@@ -25,8 +25,7 @@ table.dataframe {
 }
 
 /* header */
-table.simpletable thead th,
-table.dataframe thead th {
+table.simpletable thead th {
   position: sticky;            /* 스크롤 시 헤더 고정 느낌(선택) */
   top: 0;
   background: rgba(0,0,0,0.04);
@@ -38,8 +37,7 @@ table.dataframe thead th {
 }
 
 /* body cells */
-table.simpletable td,
-table.dataframe td {
+table.simpletable td {
   padding: 0.45em 0.75em;
   border-bottom: 1px solid rgba(0,0,0,0.06);
   text-align: right;
@@ -47,7 +45,6 @@ table.dataframe td {
 }
 
 /* row index column (pandas-style) */
-table.dataframe tbody th,
 table.simpletable tbody th {
   padding: 0.45em 0.75em;
   border-bottom: 1px solid rgba(0,0,0,0.06);
@@ -58,36 +55,92 @@ table.simpletable tbody th {
 }
 
 /* zebra striping like notebooks */
-table.simpletable tbody tr:nth-child(even),
-table.dataframe tbody tr:nth-child(even) {
+table.simpletable tbody tr:nth-child(even) {
   background: rgba(0,0,0,0.02);
 }
 
 /* last row border cleanup */
 table.simpletable tbody tr:last-child td,
-table.simpletable tbody tr:last-child th,
-table.dataframe tbody tr:last-child td,
-table.dataframe tbody tr:last-child th {
+table.simpletable tbody tr:last-child th {
   border-bottom: 0;
 }
 
 /* dark mode */
-[data-md-color-scheme="slate"] table.simpletable,
-[data-md-color-scheme="slate"] table.dataframe {
+[data-md-color-scheme="slate"] table.simpletable {
   border-color: rgba(255,255,255,0.14);
 }
-[data-md-color-scheme="slate"] table.simpletable thead th,
-[data-md-color-scheme="slate"] table.dataframe thead th {
+[data-md-color-scheme="slate"] table.simpletable thead th {
   background: rgba(255,255,255,0.06);
   border-bottom-color: rgba(255,255,255,0.12);
 }
 [data-md-color-scheme="slate"] table.simpletable td,
-[data-md-color-scheme="slate"] table.simpletable tbody th,
-[data-md-color-scheme="slate"] table.dataframe td,
-[data-md-color-scheme="slate"] table.dataframe tbody th {
+[data-md-color-scheme="slate"] table.simpletable tbody th {
   border-bottom-color: rgba(255,255,255,0.08);
 }
-[data-md-color-scheme="slate"] table.simpletable tbody tr:nth-child(even),
-[data-md-color-scheme="slate"] table.dataframe tbody tr:nth-child(even) {
+[data-md-color-scheme="slate"] table.simpletable tbody tr:nth-child(even) {
   background: rgba(255,255,255,0.04);
+}
+
+/* --- Pandas/Jupyter dataframe tables: clean merged borders --- */
+
+table.dataframe {
+  border-collapse: collapse !important;     /* merge borders */
+  border-spacing: 0 !important;
+  border: 0.5px solid rgba(0,0,0,0.25) !important;  /* outer border */
+  border-radius: 12px;
+  overflow: hidden;                         /* keep rounded corners */
+  width: auto;
+  max-width: 100%;
+  background: var(--md-default-bg-color);
+  font-size: 0.8em;
+  margin-bottom: 40px;
+}
+
+/* cells */
+table.dataframe th,
+table.dataframe td {
+  border: 0.5px solid rgba(0,0,0,0.18) !important;  /* inner grid */
+  padding: 0.45em 0.75em;
+  white-space: nowrap;
+}
+
+table.dataframe td {
+  text-align: right;
+}
+
+/* header */
+table.dataframe thead th {
+  background: rgba(0,0,0,0.04);
+  font-weight: 600;
+  border-bottom: 0.5px solid rgba(0,0,0,0.25) !important;
+}
+
+/* row index column (left) */
+table.dataframe tbody th {
+  background: rgba(0,0,0,0.02);
+  font-weight: 600;
+}
+
+/* zebra (optional, keep subtle) */
+table.dataframe tbody tr:nth-child(even) {
+  background: rgba(0,0,0,0.02);
+}
+
+/* dark mode */
+[data-md-color-scheme="slate"] table.dataframe {
+  border-color: rgba(255,255,255,0.22) !important;
+}
+[data-md-color-scheme="slate"] table.dataframe th,
+[data-md-color-scheme="slate"] table.dataframe td {
+  border-color: rgba(255,255,255,0.14) !important;
+}
+[data-md-color-scheme="slate"] table.dataframe thead th {
+  background: rgba(255,255,255,0.06);
+  border-bottom-color: rgba(255,255,255,0.22) !important;
+}
+[data-md-color-scheme="slate"] table.dataframe tbody th {
+  background: rgba(255,255,255,0.04);
+}
+[data-md-color-scheme="slate"] table.dataframe tbody tr:nth-child(even) {
+  background: rgba(255,255,255,0.03);
 }
