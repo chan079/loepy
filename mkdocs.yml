@@ -2,7 +2,7 @@ site_name: Python code for Lectures on Econometrics
 
 nav:
   - Home: index.md
-  - Tutorials:
+  - Python Codes:
       - 준비: 00.md
       - 제3장: 03.md
       - 제4장: 04.md
@@ -11,6 +11,7 @@ nav:
       - 제8장: 08.md
       - 제9장: 09.md
       - 제10장: 10.md
+      - 제11장: 11.md
 
 theme:
   name: material
