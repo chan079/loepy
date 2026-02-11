@@ -32,8 +32,13 @@ markdown_extensions:
       anchor_linenums: true
       linenums: false
       auto_title: true
+      use_pygments: true
+      pygments_lang_class: true
   - pymdownx.superfences
   - pymdownx.details
+
+extra_css:
+  - stylesheets/extra.css
 
 extra_javascript:
   - javascripts/strip-prompts.js

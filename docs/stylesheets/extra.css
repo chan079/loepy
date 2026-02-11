@@ -1,0 +1,13 @@
+.md-typeset .language-text .filename,
+.md-typeset .language-text pre .md-code__nav,
+.md-typeset .language-text pre code {
+    background-color: white !important;
+}
+
+.md-typeset .language-text pre code .go {
+    color: black !important;
+}
+
+.md-typeset .language-text .filename {
+  display: none !important;
+}
