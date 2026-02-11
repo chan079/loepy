@@ -10,6 +10,7 @@ nav:
       - 제7장: 07.md
       - 제8장: 08.md
       - 제9장: 09.md
+      - 제10장: 10.md
 
 theme:
   name: material
