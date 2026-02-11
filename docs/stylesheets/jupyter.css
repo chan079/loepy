@@ -1,0 +1,93 @@
+/* Jupyter-like SimpleTable / DataFrame table styling */
+
+div.reg-notes {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  font-size: 0.7em;
+}
+
+table.simpletable td,
+table.simpletable th {
+  line-height: 1.0;
+}
+
+table.simpletable,
+table.dataframe {
+  width: auto;                 /* Jupyter처럼 내용 너비 중심 */
+  max-width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 0.5px solid rgba(0,0,0,0.12);
+  /*border-radius: 12px;*/
+  overflow: hidden;            /* radius 적용 */
+  background: var(--md-default-bg-color);
+  font-size: 0.8em;
+}
+
+/* header */
+table.simpletable thead th,
+table.dataframe thead th {
+  position: sticky;            /* 스크롤 시 헤더 고정 느낌(선택) */
+  top: 0;
+  background: rgba(0,0,0,0.04);
+  font-weight: 600;
+  border-bottom: 1px solid rgba(0,0,0,0.10);
+  padding: 0.55em 0.75em;
+  text-align: right;           /* Jupyter/pandas 기본이 숫자 우측 정렬 */
+  white-space: nowrap;
+}
+
+/* body cells */
+table.simpletable td,
+table.dataframe td {
+  padding: 0.45em 0.75em;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* row index column (pandas-style) */
+table.dataframe tbody th,
+table.simpletable tbody th {
+  padding: 0.45em 0.75em;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-weight: 600;
+  text-align: right;
+  background: rgba(0,0,0,0.02);
+  white-space: nowrap;
+}
+
+/* zebra striping like notebooks */
+table.simpletable tbody tr:nth-child(even),
+table.dataframe tbody tr:nth-child(even) {
+  background: rgba(0,0,0,0.02);
+}
+
+/* last row border cleanup */
+table.simpletable tbody tr:last-child td,
+table.simpletable tbody tr:last-child th,
+table.dataframe tbody tr:last-child td,
+table.dataframe tbody tr:last-child th {
+  border-bottom: 0;
+}
+
+/* dark mode */
+[data-md-color-scheme="slate"] table.simpletable,
+[data-md-color-scheme="slate"] table.dataframe {
+  border-color: rgba(255,255,255,0.14);
+}
+[data-md-color-scheme="slate"] table.simpletable thead th,
+[data-md-color-scheme="slate"] table.dataframe thead th {
+  background: rgba(255,255,255,0.06);
+  border-bottom-color: rgba(255,255,255,0.12);
+}
+[data-md-color-scheme="slate"] table.simpletable td,
+[data-md-color-scheme="slate"] table.simpletable tbody th,
+[data-md-color-scheme="slate"] table.dataframe td,
+[data-md-color-scheme="slate"] table.dataframe tbody th {
+  border-bottom-color: rgba(255,255,255,0.08);
+}
+[data-md-color-scheme="slate"] table.simpletable tbody tr:nth-child(even),
+[data-md-color-scheme="slate"] table.dataframe tbody tr:nth-child(even) {
+  background: rgba(255,255,255,0.04);
+}

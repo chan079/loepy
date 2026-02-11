@@ -4,8 +4,9 @@
     background-color: white !important;
 }
 
-.md-typeset .language-text pre code .go {
-    color: black !important;
+.md-typeset .language-text pre code {
+    /*font-size: 75% !important;*/
+    /*color: #e3f2fd !important;*/
 }
 
 .md-typeset .language-text .filename {
