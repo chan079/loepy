@@ -1,6 +1,6 @@
 # Home
 
-계량경제학강의 장별 python 코드
+『[계량경제학강의](https://github.com/chan079/loebook/)』 장별 python 코드
 
 ## 목록
 
